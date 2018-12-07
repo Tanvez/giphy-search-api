@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import { Navbar } from "reactstrap";
 import "./App.css";
 import SearchBar from "./containers/searchBar";
-import Results from "./components/results";
+import Results from "./containers/results";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Navbar>
-          <SearchBar />
-        </Navbar>
+        <SearchBar />
         <Results />
       </div>
     );

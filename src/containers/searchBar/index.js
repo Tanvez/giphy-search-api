@@ -23,26 +23,27 @@ class SearchBar extends Component {
     }&api_key=zXhctGdk83qg2qCVSGM2nroskhTtf4Cv`;
     fetch(url)
       .then(response => response.json())
-      .then(data => {
-        console.log("got the data ", data);
-        this.setState(data);
-        this.props.setResults(data);
+      .then(result => {
+        this.setState(result.data);
+        this.props.setResults(result.data);
       })
       .catch(err => console.error(err));
   }
 
   render() {
     return (
-      <div className="search-container">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className="search__input"
-            type="text"
-            placeholder="Search"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </form>
+      <div>
+        <div className="search-container">
+          <form onSubmit={this.handleSubmit}>
+            <input
+              className="search__input"
+              type="text"
+              placeholder="Search"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </form>
+        </div>
       </div>
     );
   }
