@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { setResults } from "../../store";
-import Results from "../../components/results";
 import "./style.css";
 
 class SearchBar extends Component {
@@ -19,8 +18,6 @@ class SearchBar extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("A name was submitted: " + this.state.value);
-    console.log(process.env.GIPHY_API_KEY);
     const url = `http://api.giphy.com/v1/gifs/search?&q=${
       this.state.value
     }&api_key=zXhctGdk83qg2qCVSGM2nroskhTtf4Cv`;
@@ -36,19 +33,15 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="container">
-            <div className="search-box">
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-                placeholder="Search Giphy API"
-              />
-              <span />
-            </div>
-          </div>
+          <input
+            className="search__input"
+            type="text"
+            placeholder="Search"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
         </form>
       </div>
     );
