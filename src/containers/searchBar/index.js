@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { setResults } from "../../store";
+import * as Promise from "bluebird";
 import "./style.css";
 
 class SearchBar extends Component {
@@ -24,8 +25,29 @@ class SearchBar extends Component {
     fetch(url)
       .then(response => response.json())
       .then(result => {
-        this.setState(result.data);
-        this.props.setResults(result.data);
+        const { data, pagination } = result;
+
+        const promiseArray = [];
+        for (let i = 25; i <= 50; i += 25) {
+          promiseArray.push(
+            fetch(
+              `http://api.giphy.com/v1/gifs/search?&q=${
+                this.state.value
+              }&api_key=zXhctGdk83qg2qCVSGM2nroskhTtf4Cv&offset=${i}`
+            ).then(response => response.json())
+          );
+        }
+        // gets all gifs for search result - cors blocked - maybe too many request?
+        Promise.all(promiseArray).then(results => {
+          let allResults = result.data;
+          results.forEach(res => {
+            console.log(Array.isArray(res.data));
+            allResults = allResults.concat(res.data);
+          });
+          console.log(allResults);
+          this.setState({ data: allResults });
+          this.props.setResults(allResults);
+        });
       })
       .catch(err => console.error(err));
   }
