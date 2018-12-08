@@ -41,10 +41,9 @@ class SearchBar extends Component {
         Promise.all(promiseArray).then(results => {
           let allResults = result.data;
           results.forEach(res => {
-            console.log(Array.isArray(res.data));
             allResults = allResults.concat(res.data);
           });
-          console.log(allResults);
+
           this.setState({ data: allResults });
           this.props.setResults(allResults);
         });
