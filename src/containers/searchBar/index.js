@@ -25,9 +25,9 @@ class SearchBar extends Component {
     fetch(url)
       .then(response => response.json())
       .then(result => {
-        const { data, pagination } = result;
-
         const promiseArray = [];
+        // gets all gifs for search result - cors blocked - maybe too many request?
+        // limit to total of 75 gifs
         for (let i = 25; i <= 50; i += 25) {
           promiseArray.push(
             fetch(
@@ -37,7 +37,6 @@ class SearchBar extends Component {
             ).then(response => response.json())
           );
         }
-        // gets all gifs for search result - cors blocked - maybe too many request?
         Promise.all(promiseArray).then(results => {
           let allResults = result.data;
           results.forEach(res => {
