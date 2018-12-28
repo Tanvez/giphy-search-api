@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "deploy-prod": "aws s3 cp build s3://giphysearchapi-hosting-mobilehub-1363464120 --recursive",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e2e-test": "./e2e-test.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
