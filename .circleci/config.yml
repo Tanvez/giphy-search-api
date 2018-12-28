@@ -28,9 +28,11 @@ jobs:
     docker:
       - image: circleci/node:8.10
     steps:
+      - checkout
+      - attach_workspace:
+          at: .
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
-      - checkout
       # run tests!
       - run:
           name: Run tests with coverage
