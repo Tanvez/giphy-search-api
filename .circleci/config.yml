@@ -93,7 +93,7 @@ workflows:
                 - master
       - deploy:
           requires:
-            - test
+            - e2e-test
           filters:
             branches:
               only:
