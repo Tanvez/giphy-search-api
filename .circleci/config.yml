@@ -38,8 +38,9 @@ jobs:
           name: Run tests with coverage
           command: |
             npm install
-            # echo 'export TESTING_API="$TESTING_API"' >> ~/.bashrc
-            chmod +x e2e-test.sh
+            echo $TESTING_API
+            echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
+            # chmod +x e2e-test.sh
   # test:
   #   docker:
   #     - image: circleci/node:8.10
