@@ -40,7 +40,7 @@ jobs:
             npm install
             echo $TESTING_API
             echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
-            # chmod +x e2e-test.sh
+            chmod +x e2e-test.sh
   # test:
   #   docker:
   #     - image: circleci/node:8.10
