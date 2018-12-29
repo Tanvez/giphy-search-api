@@ -3,13 +3,11 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
-# TESTING_API = ${TESTING_API}
-if [ -z "$TESTING_API"];
+API = $TESTING_API
+if [ -z "$API" ];
 then
   echo "Empty"
   exit 1
 else 
-   echo "WORKS! $TESTING_API"
+   echo "WORKS! $API"
 fi
-
-cat ~/.bashrc
