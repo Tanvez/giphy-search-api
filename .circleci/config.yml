@@ -36,6 +36,7 @@ jobs:
       # run tests!
       - run:
           name: Run tests with coverage
+          shell: /bin/sh
           command: |
             npm install
             echo $TESTING_API
