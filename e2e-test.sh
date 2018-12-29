@@ -11,5 +11,5 @@ then
   echo "Empty"
   exit 1
 else 
-   echo "WORKS! $TESTING_API"
+   echo "WORKS! ${TESTING_API}"
 fi
