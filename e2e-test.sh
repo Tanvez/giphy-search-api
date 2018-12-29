@@ -12,4 +12,4 @@ else
    echo " WORKS! " + TESTING_API
 fi
 
-cat .bashrc
+cat ~/.bashrc
