@@ -39,6 +39,7 @@ jobs:
           shell: /bin/sh
           command: |
             npm install
+            brew install jq
             # echo $TESTING_API
             echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x

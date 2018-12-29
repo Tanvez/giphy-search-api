@@ -5,8 +5,7 @@ set -o pipefail
 
 # source ~/.bashrc
 echo $TESTING_API
-API = $TESTING_API
-echo `${API}`
+
 if [ -z "$TESTING_API" ];
 then
   echo "Empty"
