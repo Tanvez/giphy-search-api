@@ -41,7 +41,7 @@ jobs:
             npm install
             echo $TESTING_API
             echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
-            echo $TESTING_API
+            echo ${TESTING_API}
             chmod +x e2e-test.sh
   # test:
   #   docker:
