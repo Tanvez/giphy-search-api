@@ -40,7 +40,7 @@ jobs:
           command: |
             npm install
             # echo $TESTING_API
-            # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
+            echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x
             bash  ./e2e-test.sh
   # test:
