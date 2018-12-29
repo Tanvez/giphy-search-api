@@ -4,7 +4,7 @@ set -o errexit
 set -o pipefail
 
 TESTING_API = ${TESTING_API}
-if [ -z "$TESTING_API"]
+if [ -z ${TESTING_API}];
 then
   echo "Empty"
   exit 1
