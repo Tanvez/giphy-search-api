@@ -36,11 +36,12 @@ jobs:
       # run tests!
       - run:
           name: Run tests with coverage
-          shell: /bin/sh
+          # shell: /bin/sh
           command: |
             npm install
-            echo $TESTING_API
+            # echo $TESTING_API
             echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
+            set -x
             chmod +x e2e-test.sh
   # test:
   #   docker:
@@ -95,11 +96,11 @@ workflows:
               only:
                 - dev
                 - master
-      - deploy:
-          requires:
-            - e2e_test
-          filters:
-            branches:
-              only:
-                - dev
-                - master
+      # - deploy:
+      #     requires:
+      #       - e2e_test
+      #     filters:
+      #       branches:
+      #         only:
+      #           - dev
+      #           - master
