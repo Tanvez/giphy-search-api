@@ -13,4 +13,3 @@ else
 fi
 
 # cat ~/.bashrc
-echo TESTING_API
