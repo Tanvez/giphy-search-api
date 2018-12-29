@@ -36,13 +36,13 @@ jobs:
       # run tests!
       - run:
           name: Run tests with coverage
-          # shell: /bin/sh
+          shell: /bin/sh
           command: |
             npm install
             # echo $TESTING_API
             # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x
-            sh  ./e2e-test.sh
+            bash  ./e2e-test.sh
   # test:
   #   docker:
   #     - image: circleci/node:8.10
