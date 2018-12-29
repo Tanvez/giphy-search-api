@@ -2,7 +2,7 @@
 TESTING_API = ${TESTING_API}
 set -o nounset
 set -o errexit
-# set -o pipefail
+set -o pipefail
 
 if [ -z "$TESTING_API"]
 then
