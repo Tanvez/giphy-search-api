@@ -35,15 +35,16 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run:
+          name: "Install jq"
+          command: "sudo apt-get install jq"
+      - run:
           name: Run tests with coverage
-          shell: /bin/sh
+          # shell: /bin/sh
           command: |
-            npm install
-            sudo apt-get install jq
             # echo $TESTING_API
-            echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
+            # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x
-            bash  ./e2e-test.sh
+            sh ./e2e-test.sh
   # test:
   #   docker:
   #     - image: circleci/node:8.10
