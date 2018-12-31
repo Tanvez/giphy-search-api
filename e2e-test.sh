@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 set -o nounset
 set -o errexit
-set -o pipefail
+# set -o pipefail
 
 # source ~/.bashrc
 echo $TESTING_API
