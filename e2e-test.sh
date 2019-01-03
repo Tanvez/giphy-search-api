@@ -8,7 +8,7 @@ echo $TESTING_API
 
 if [ -z "$TESTING_API" ];
 then
-  echo `Empty`
+  echo "Empty"
   exit 1
 else 
    echo "WORKS! ${TESTING_API}"
