@@ -41,18 +41,19 @@ jobs:
           name: Run tests with coverage
           # shell: /bin/sh
           command: |
-            # echo $TESTING_API
-            # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
-            # set -x
-            # if [ "${CIRCLE_BRANCH}" == "dev" ];
-            # then
-            #   echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
-              
-            # elif [ "${CIRCLE_BRANCH}" == "master" ];
-            # then
-            #   echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
-            # fi
-            bash ./e2e-test.sh
+            echo $TESTING_API
+            echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
+            set -x
+            if [ "${CIRCLE_BRANCH}" == "dev" ];
+            then
+              echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
+              bash ./e2e-test.sh
+            elif [ "${CIRCLE_BRANCH}" == "master" ];
+            then
+              echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
+              bash ./e2e-test.sh
+            fi
+
   # test:
   #   docker:
   #     - image: circleci/node:8.10
