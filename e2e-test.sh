@@ -3,7 +3,7 @@
 # set -o errexit
 # set -o pipefail
 
-source /.bashrc
+source ~/.bashrc
 echo $TESTING_API
 
 if [ -z "$TESTING_API" ];
@@ -14,4 +14,4 @@ else
    echo "WORKS! ${TESTING_API}"
 fi
 
-cat /.bashrc
+cat ~/.bashrc
