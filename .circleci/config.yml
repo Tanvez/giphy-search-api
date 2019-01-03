@@ -41,9 +41,7 @@ jobs:
           name: Run tests with coverage
           # shell: /bin/sh
           command: |
-            echo $TESTING_API
-            echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
-            set -x
+            # set -x
             if [ "${CIRCLE_BRANCH}" == "dev" ];
             then
               echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
