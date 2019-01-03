@@ -105,11 +105,11 @@ workflows:
               only:
                 - dev
                 - master
-      # - deploy:
-      #     requires:
-      #       - e2e_test
-      #     filters:
-      #       branches:
-      #         only:
-      #           - dev
-      #           - master
+      - deploy:
+          requires:
+            - e2e_test
+          filters:
+            branches:
+              only:
+                - dev
+                - master
