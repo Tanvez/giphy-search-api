@@ -4,16 +4,19 @@
 # set -o pipefail
 
 # echo $TESTING_API
-
+TESTING_API = ''
 if [ "${CIRCLE_BRANCH}" == "dev" ];
 then
-  echo $DEV_API
-  
+  # echo $DEV_API
+  TESTING_API = $DEV_API
   
 elif [ "${CIRCLE_BRANCH}" == "master" ];
 then
-  echo $PROD_API
+  # echo $PROD_API
+  TESTING_API = $PROD_API
 fi
+
+echo $TESTING_API
 # if [ -z "$TESTING_API" ];
 # then
 #   echo "Empty"
