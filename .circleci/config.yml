@@ -44,14 +44,14 @@ jobs:
             # echo $TESTING_API
             # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x
-            if [ "${CIRCLE_BRANCH}" == "dev" ];
-            then
-              echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
+            # if [ "${CIRCLE_BRANCH}" == "dev" ];
+            # then
+            #   echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
               
-            elif [ "${CIRCLE_BRANCH}" == "master" ];
-            then
-              echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
-            fi
+            # elif [ "${CIRCLE_BRANCH}" == "master" ];
+            # then
+            #   echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
+            # fi
             bash ./e2e-test.sh
   # test:
   #   docker:
