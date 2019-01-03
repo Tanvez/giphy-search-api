@@ -45,10 +45,12 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "dev" ];
             then
               echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
+              cat ~/.bashrc
               bash ./e2e-test.sh
             elif [ "${CIRCLE_BRANCH}" == "master" ];
             then
               echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
+              cat ~/.bashrc
               bash ./e2e-test.sh
             fi
       # - run:
