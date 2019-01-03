@@ -37,18 +37,18 @@ jobs:
       - run:
           name: "Install jq"
           command: "sudo apt-get install jq"
-      - run:
-          name: Run tests with coverage
-          # shell: /bin/sh
-          command: |
-            # set -x
-            if [ "${CIRCLE_BRANCH}" == "dev" ];
-            then
-              echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
-            elif [ "${CIRCLE_BRANCH}" == "master" ];
-            then
-              echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
-            fi
+      # - run:
+      #     name: Run tests with coverage
+      #     # shell: /bin/sh
+      #     command: |
+      #       # set -x
+      #       if [ "${CIRCLE_BRANCH}" == "dev" ];
+      #       then
+      #         echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
+      #       elif [ "${CIRCLE_BRANCH}" == "master" ];
+      #       then
+      #         echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
+      #       fi
       - run:
           name: "Run script"
           command: |
