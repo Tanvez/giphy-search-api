@@ -44,7 +44,15 @@ jobs:
             # echo $TESTING_API
             # echo 'export TESTING_API=$TESTING_API' >> ~/.bashrc
             # set -x
-            sh ./e2e-test.sh
+            if [ "${CIRCLE_BRANCH}" == "dev" ];
+            then
+              echo 'export TESTING_API=$DEV_API' >> ~/.bashrc
+              
+            elif [ "${CIRCLE_BRANCH}" == "master" ];
+            then
+              echo 'export TESTING_API=$PROD_API' >> ~/.bashrc
+            fi
+            bash ./e2e-test.sh
   # test:
   #   docker:
   #     - image: circleci/node:8.10
