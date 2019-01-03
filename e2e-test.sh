@@ -16,7 +16,7 @@ then
   TESTING_API = `echo $PROD_API`
 fi
 
-echo $TESTING_API
+echo "$TESTING_API"
 # if [ -z "$TESTING_API" ];
 # then
 #   echo "Empty"
