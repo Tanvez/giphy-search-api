@@ -42,19 +42,19 @@ jobs:
           # shell: /bin/sh
           command: |
             # set -x
-            if [ "${CIRCLE_BRANCH}" == "dev" ];
-            then
-              echo $DEV_API
+            # if [ "${CIRCLE_BRANCH}" == "dev" ];
+            # then
+            #   echo $DEV_API
               # echo 'export TESTING_API=${DEV_API}' >> ~/.bashrc
               # cat ~/.bashrc
               # bash ./e2e-test.sh
-            elif [ "${CIRCLE_BRANCH}" == "master" ];
-            then
-              echo $PROD_API
+            # elif [ "${CIRCLE_BRANCH}" == "master" ];
+            # then
+            #   echo $PROD_API
               # echo 'export TESTING_API=${PROD_API}' >> ~/.bashrc
               # cat ~/.bashrc
-              # bash ./e2e-test.sh
-            fi
+              bash ./e2e-test.sh
+            # fi
       # - run:
       #     name: "Run script"
       #     command: |

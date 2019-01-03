@@ -4,8 +4,8 @@
 # set -o pipefail
 
 source ~/.bashrc
-echo $TESTING_API
-
+# echo $TESTING_API
+echo ${CIRCLE_BRANCH}
 if [ -z "$TESTING_API" ];
 then
   echo "Empty"
