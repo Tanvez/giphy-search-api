@@ -3,13 +3,21 @@
 # set -o errexit
 # set -o pipefail
 
-source ~/.bashrc
 # echo $TESTING_API
-echo ${CIRCLE_BRANCH}
-if [ -z "$TESTING_API" ];
+
+if [ "${CIRCLE_BRANCH}" == "dev" ];
 then
-  echo "Empty"
-  exit 1
-else 
-   echo "WORKS! ${TESTING_API}"
+  echo $DEV_API
+  
+  
+elif [ "${CIRCLE_BRANCH}" == "master" ];
+then
+  echo $PROD_API
 fi
+# if [ -z "$TESTING_API" ];
+# then
+#   echo "Empty"
+#   exit 1
+# else 
+#    echo "WORKS! ${TESTING_API}"
+# fi
